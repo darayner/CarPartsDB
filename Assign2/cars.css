@@ -1,0 +1,81 @@
+body{
+	background-color: #C0C0C0;
+	margin: 0px;
+	font-weight: 500;
+}
+
+header{
+  background-color: #000000;
+  color: #444;
+}
+
+.status{
+	float: right;
+	color: #FFFFFF;
+}
+
+.table-results{
+	border-collapse: collapse;
+	text-align: center;
+	width: 100%;
+	font-size: 25px;
+
+}
+
+#parts{
+	float: left;
+	width: 10%;
+	height: 10%;
+	margin-left: 2%;
+}
+
+#carParts{
+	float: left;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+#submit{
+	margin-left: 25px;
+	background-color: #C0C0C0;
+}
+
+header::after{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+.navbar{
+	width: 80%;
+	height: 10%;
+	margin: 0 auto;
+	text-align: right;
+}
+
+.headerList{
+	float: right;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.headerList li{
+	display: inline-block;
+	margin-left: 50px;
+	padding-top: 25px;
+	position: relative;
+	text-align: center;
+  	list-style-position: inside;
+  	list-style-type: none;
+}
+
+.headerUL a{
+	color: #FFFFFF;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.headerNav a: hover{
+	color: #000;
+}

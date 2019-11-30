@@ -1,0 +1,140 @@
+body{
+	background-color: #C0C0C0;
+	margin: 0px;
+	font-weight: 500;
+}
+
+header{
+  background-color: #000000;
+  color: #444;
+}
+
+.table{
+	text-align: center;
+	overflow-x: auto;
+	overflow-y:auto;
+}
+
+.status{
+	float: right;
+	color: #FFFFFF;
+}
+
+#table-results{
+	margin-top: 75px;
+	margin-left: 25px;
+	border-collapse: collapse;
+	text-align: center;
+	width: 25px;
+}
+
+#table-results tr:nth-child(even){
+	background-color: #f2f2f2;
+}
+
+#table-results tr:hover {
+	background-color: #ddd;
+}
+
+#table-results td, #table-results th {
+  border: 1px solid #ddd;
+  padding: 5px;
+  font-size: 12px;
+  text-align:center;
+}
+
+#table-results th {
+  background-color: #000000;
+  color: white;
+}
+
+.pagination {
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.pagination a{
+	text-align: center;
+	color: black;
+  	float: left;
+  	padding: 5px 10px;
+  	text-decoration: none;
+  	border: 1px solid #000000;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {
+	background-color: #ddd;}
+
+.pagination a:first-child {
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.pagination a:last-child {
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+#parts{
+	float: left;
+	width: 10%;
+	height: 10%;
+	margin-left: 2%;
+}
+
+#carParts{
+	float: left;
+	text-transform: uppercase;
+	color: #FFFFFF;
+}
+
+#submit{
+	margin-left: 25px;
+	background-color: #C0C0C0;
+}
+
+header::after{
+	content: ' ';
+	display: table;
+	clear: both;
+}
+
+.navbar{
+	width: 80%;
+	height: 10%;
+	margin: 0 auto;
+	text-align: right;
+}
+
+.headerList{
+	float: right;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.headerList li{
+	display: inline-block;
+	margin-left: 50px;
+	padding-top: 25px;
+	position: relative;
+	text-align: center;
+  	list-style-position: inside;
+  	list-style-type: none;
+}
+
+.headerUL a{
+	color: #FFFFFF;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.headerNav a: hover{
+	color: #000;
+}
