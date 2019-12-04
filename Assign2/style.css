@@ -135,6 +135,13 @@ header::after{
 	text-transform: uppercase;
 }
 
+
+.editBox {
+    height: 200px;
+    border: 2px solid red;
+    border-radius: 2px;
+}
+
 .headerNav a: hover{
 	color: #000;
 }
