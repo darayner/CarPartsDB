@@ -19,6 +19,7 @@
                     $_POST['Description02'],$_POST['Description03'],$_POST['Description04'],$_POST['Description05'],$_POST['Description06'],
                     $_POST['Price'],$_POST['Estimated_Shipping_Cost'],$_POST['Notes'],$_POST['Shipping_Weight'],$_GET['PartID']); 
             $stmt->execute();
+            echo "Changes successful!";
         }
         else{
             echo "fail";
@@ -58,25 +59,26 @@
 		<th>Estimated Shipping Cost</th>
 		<th>Notes</th>
 		<th>Shipping Weight</th>
+                <th>Finalize</th>
 		</tr>";
-    echo "<form action = 'change_info.php?PartID=".$_GET["PartID"]."' method = 'POST'>
+    echo "<form action = 'change_info.php?PartID=".$_GET["PartID"]."' method = 'POST' id='editForm'>
             <tr>
             <td>" . $_GET['PartID'] ."
-            <td> <input type = 'text' class ='editBox' name = 'PartName' value = '".$row['PartName']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'PartNumber' value ='".$row['PartNumber']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Suppliers' value ='".$row['Suppliers']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Category' value ='".$row['Category']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Description01' value ='".$row['Description01']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Description02' value ='".$row['Description02']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Description03' value ='".$row['Description03']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Description04' value ='".$row['Description04']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Description05' value ='".$row['Description05']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Description06' value ='".$row['Description06']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Price' value ='".$row['Price']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Estimated Shipping Cost' value ='".$row['Estimated Shipping Cost']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Notes' value ='".$row['Notes']."'></td>
-            <td> <input type = 'text' class ='editBox' name = 'Shipping Weight' value ='".$row['Shipping Weight']."'></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='PartName'  form='editForm' maxlength= '65'>" .$row['PartName']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='PartNumber'  form='editForm' maxlength= '13'>" .$row['PartNumber']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Suppliers'  form='editForm' maxlength= '12'>" .$row['Suppliers']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Category'  form='editForm' maxlength= '26'>" .$row['Category']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Description01'  form='editForm' maxlength= '155'>" .$row['Description01']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Description02'  form='editForm' maxlength= '187'>" .$row['Description02']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Description03'  form='editForm' maxlength= '154'>" .$row['Description03']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Description04'  form='editForm' maxlength= '121'>" .$row['Description04']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Description05'  form='editForm' maxlength= '162'>" .$row['Description05']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Description06'  form='editForm' maxlength= '104'>" .$row['Description06']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Price'  form='editForm' maxlength= '8'>" .$row['Price']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Estimated Shipping Cost'  form='editForm' maxlength= '5'>" .$row['Estimated Shipping Cost']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Notes'  form='editForm' maxlength= '50'>" .$row['Notes']." </textarea></td>
+            <td><textarea rows='1' cols='8' class = 'editBox' name='Shipping Weight'  form='editForm' maxlength= '3'>" .$row['Shipping Weight']." </textarea></td>
+            
             <td> <button type='submit' name='submit-edit' id='submitFilter'>Submit</button> </td>
         </form></tr></table></div>";
-    echo "Shipping Cost: ".$row['Estimated Shipping Cost']."<br>Shipping Weight: ".$row['Shipping Weight'];
     
