@@ -1,11 +1,16 @@
+
 <?php
     require_once('header.php');
     require_once('db_connect.php');
     echo $_POST['Shipping Weight']."<br>";
-    echo $_POST['Estimated Shipping Cost']."<br>";
+    echo $_POST['Estimated Shipping Cost']."<br>";    
     
     if($_SESSION['username'] != "admin"){
         die("Invalid username");
+    }
+    
+    if($_COOKIE["PHPSESSID"] != $_POST['sessionId'] && isset($_POST['sessionID'])){
+        die("Invalid session ID");
     }
     
     if(isset($_POST['PartName'])){
@@ -78,7 +83,13 @@
             <td><textarea rows='1' cols='8' class = 'editBox' name='Estimated Shipping Cost'  form='editForm' maxlength= '5'>" .$row['Estimated Shipping Cost']." </textarea></td>
             <td><textarea rows='1' cols='8' class = 'editBox' name='Notes'  form='editForm' maxlength= '50'>" .$row['Notes']." </textarea></td>
             <td><textarea rows='1' cols='8' class = 'editBox' name='Shipping Weight'  form='editForm' maxlength= '3'>" .$row['Shipping Weight']." </textarea></td>
+                <input type = 'hidden' id = 'sessionId' name = 'sessionId' value = ''>
             
-            <td> <button type='submit' name='submit-edit' id='submitFilter'>Submit</button> </td>
+            <td> <button type='submit' name='submit-edit' id='submitFilter' onclick = 'cookieHandler()'>Submit</button> </td>
         </form></tr></table></div>";
-    
+    ?>
+<script>
+        function cookieHandler(){
+            document.getElementById("sessionId").value = document.cookie.substring(document.cookie.length-26);
+        }
+</script>
